@@ -13,4 +13,11 @@ import seaborn as sns
 # print(sns.get_dataset_names())
 
 # 팁 데이터 셋을 불러온 다음, 데이터 셋의 구성을 살펴보기
+# .head(): 데이터의 상단 5개 행 출력
+tips = sns.load_dataset("tips")
+# print(tips.head())
+
+# info(): 열에 대한 요약 정보 확인
+# 행과 열의 크기, 컬럼명, 컬럼별 결측치, 컬럼별 데이터 타입
+print(tips.info())
 

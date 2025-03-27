@@ -11,7 +11,7 @@ plt.plot([1, 2, 3], [1, 1, 1], linestyle = 'dashdot', label = 'dashdot')
 
 plt.axis([0.8, 3.2, 0.5, 5.0])
 plt.legend(loc = 'upper center', ncol = 4)
-plt.show();
+plt.show()
 
 #선의 종류는 vo.la/NsmLBW 에서 확인
 
