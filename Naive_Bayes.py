@@ -108,4 +108,25 @@ cv.fit(x)
 
 # 변환하기 (문장 벡터화하기)
 x = cv.transform(x)
-print(x)
+# print(x)
+
+# 단어별 인덱스 값 확인해보기
+print(cv.vocabulary_['go'])
+print(cv.vocabulary_['jurong'])
+print(cv.vocabulary_['point'])
+
+# 모델링 및 예측 / 평가하기
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=100)
+
+from sklearn.naive_bayes import MultinomialNB
+
+# 모델링 및 예측하기
+model = MultinomialNB()
+model.fit(x_train, y_train)
+pred = model.predict(x_test)
+
+from sklearn.metrics import accuracy_score, confusion_matrix
+accuracy_score(y_test, pred)
+print(confusion_matrix(y_test, pred))
